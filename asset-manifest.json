@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/saarvv-screen/static/css/main.f3d13dd2.css",
-    "main.js": "/saarvv-screen/static/js/main.622b395e.js",
+    "main.js": "/saarvv-screen/static/js/main.1bbd9e46.js",
     "static/js/453.c07b7eb2.chunk.js": "/saarvv-screen/static/js/453.c07b7eb2.chunk.js",
     "index.html": "/saarvv-screen/index.html",
     "main.f3d13dd2.css.map": "/saarvv-screen/static/css/main.f3d13dd2.css.map",
-    "main.622b395e.js.map": "/saarvv-screen/static/js/main.622b395e.js.map",
+    "main.1bbd9e46.js.map": "/saarvv-screen/static/js/main.1bbd9e46.js.map",
     "453.c07b7eb2.chunk.js.map": "/saarvv-screen/static/js/453.c07b7eb2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3d13dd2.css",
-    "static/js/main.622b395e.js"
+    "static/js/main.1bbd9e46.js"
   ]
 }
