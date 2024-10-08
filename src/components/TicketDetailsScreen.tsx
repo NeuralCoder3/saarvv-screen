@@ -10,8 +10,8 @@ const BackgroundLayer = () => {
         'Deutschland-Ticket',
         dateString(first_date()),
         dateString(second_date()),
-        name,
-        ticket_number
+        name(),
+        ticket_number()
     ]
     return (
         <div className="w-full h-full">
@@ -55,7 +55,7 @@ const TicketDetailsScreen = () => {
                     {/* Left Logo */}
                     <div className="w-16 h-16 cursor-pointer" onClick={() => { navigate(`/${search}`) }}>
                         <img
-                            src="saarvv.png"
+                            src={`${process.env.PUBLIC_URL}/saarvv.png`}
                             alt="Logo"
                             className="object-contain w-full h-full"
                         />
@@ -71,7 +71,7 @@ const TicketDetailsScreen = () => {
                         {/* Bottom row: moving logo from left to right */}
                         <div className="relative mt-1 h-8">
                             <img
-                                src="saarvv.png"
+                                src={`${process.env.PUBLIC_URL}/saarvv.png`}
                                 alt="Logo"
                                 className="w-8 h-8 absolute"
                                 style={{ animation: 'moveLogo 20s linear infinite' }}
@@ -107,7 +107,7 @@ const TicketDetailsScreen = () => {
                         </div>
                         <div className="text-right mt-auto">
                             <img
-                                src="D-Ticket_Logo.svg.png"
+                                src={`${process.env.PUBLIC_URL}/D-Ticket_Logo.svg.png`}
                                 alt="D-Ticket Logo"
                                 className="w-20"
                             />
