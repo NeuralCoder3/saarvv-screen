@@ -1,9 +1,8 @@
-import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faBars, faInfoCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { dateString } from "./Const";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import { first_date, second_date } from "./Data";
 
 const header_color = "22539f";
@@ -21,6 +20,7 @@ const TicketScreen = () => {
     const current_date = new Date();
     const percentage = Math.round((current_date.getTime() - first_date().getTime()) / (second_date().getTime() - first_date().getTime()) * 100);
 
+    const { search } = useLocation();
     const navigate = useNavigate();
 
     return (
@@ -32,7 +32,6 @@ const TicketScreen = () => {
                 </div>
                 <h1 className="text-xl font-semibold ml-4 text-xl">Tickets</h1>
                 <div className="flex items-center text-right ml-auto">
-                    {/* white outline of a person using font-awesome outline */}
                     <div className="p-4 rounded-full text-3xl">
                         <FontAwesomeIcon icon={faUser} />
                     </div>
@@ -45,13 +44,11 @@ const TicketScreen = () => {
                 {/* Ticket Card 
                     at both sides, remove a semi-circle to make it look like a ticket
                 */}
-                <div 
+                <div
                     className="text-white rounded-lg p-4 mt-6 relative pl-8 pr-8 cursor-pointer"
                     style={{ backgroundColor: `#${d_ticket_color}`, color: `#${d_ticket_color_light}` }}
-                    onClick={() => { navigate("/ticket-details") }}
+                    onClick={() => { navigate(`/ticket-details${search}`) }}
                 >
-                    {/* <button onClick={() => { navigate("/ticket-details") }}> */}
-                    {/* left and right hole of ticket */}
                     <div className="absolute top-1/2  -left-2 transform -translate-y-1/2 w-6 h-12 bg-white rounded-r-full"></div>
                     <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-6 h-12 bg-white rounded-l-full"></div>
                     <div className="flex justify-between items-center">
@@ -68,11 +65,9 @@ const TicketScreen = () => {
                             <div className="h-2 rounded-full" style={{ width: `${percentage}%`, backgroundColor: `#${d_ticket_bar}` }}></div>
                         </div>
                         <p className="text-sm text-center mt-2">
-                            {/* 01.10.24 00:00 - 01.11.24 03:00 */}
                             {first_str} - {second_str}
                         </p>
                     </div>
-                {/* </button> */}
                 </div>
 
                 {/* Abgelaufene Tickets Section */}
@@ -92,9 +87,7 @@ const TicketScreen = () => {
                     </div>
                 </div>
 
-                {/* Gutschein Einlösen Section 
-                dotted border around button
-                */}
+                {/* Gutschein Einlösen Section */}
                 <div className="mt-8">
                     <button className="w-full border-gray-300 text-gray-500 p-2 rounded-lg border-dashed border-2 flex items-center">
                         <div className="flex justify-between items-center m-2 text-xl">

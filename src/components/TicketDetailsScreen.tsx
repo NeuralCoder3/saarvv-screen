@@ -1,8 +1,8 @@
-import React from "react";
 import "./TicketDetailsScreen.css";
 import { dateString, fullDateString, } from "./Const";
 import { Clock } from "./Clock";
 import { name, first_date, second_date, ticket_number, birthday, code_url } from "./Data";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const BackgroundLayer = () => {
@@ -32,6 +32,10 @@ const BackgroundLayer = () => {
 
 
 const TicketDetailsScreen = () => {
+
+    const { search } = useLocation();
+    const navigate = useNavigate();
+
     return (
         <div className="flex flex-col h-screen bg-white">
             {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-green-200 opacity-50 -z-0"></div> */}
@@ -48,11 +52,10 @@ const TicketDetailsScreen = () => {
             </div> */}
                 {/* Header with logo, title, and clock */}
                 <div className="flex w-full items-center bg-white">
-                    {/* text-white bg-blue-600"> */}
                     {/* Left Logo */}
-                    <div className="w-16 h-16">
+                    <div className="w-16 h-16 cursor-pointer" onClick={() => { navigate(`/${search}`) }}>
                         <img
-                            src="saarvv.png" // Replace with actual logo path
+                            src="saarvv.png"
                             alt="Logo"
                             className="object-contain w-full h-full"
                         />
@@ -68,7 +71,7 @@ const TicketDetailsScreen = () => {
                         {/* Bottom row: moving logo from left to right */}
                         <div className="relative mt-1 h-8">
                             <img
-                                src="saarvv.png" // Replace with actual logo path
+                                src="saarvv.png"
                                 alt="Logo"
                                 className="w-8 h-8 absolute"
                                 style={{ animation: 'moveLogo 20s linear infinite' }}
@@ -78,18 +81,15 @@ const TicketDetailsScreen = () => {
 
                     {/* Right Clock */}
                     <div className="flex items-center ml-auto justify-center p-1">
-                        {/* <span className="text-sm mr-2">14:08</span> */}
-                        {/* <div className="p-2 rounded-full text-5xl">🕑</div> */}
                         <Clock width="56px" height="56px" />
                     </div>
                 </div>
 
                 {/* QR Code and Ticket Information */}
                 <div className="flex flex-col items-center p-4">
-                    {/* QR Code Image Placeholder */}
                     <div className="w-full flex justify-center mb-4">
                         <img
-                            src={code_url()} // Replace with actual QR code path
+                            src={code_url()} 
                             alt="QR Code"
                             className="w-64 h-64 object-contain"
                         />
@@ -114,7 +114,7 @@ const TicketDetailsScreen = () => {
                         </div>
                     </div>
 
-                    {/* D-Ticket Info very small */}
+                    {/* D-Ticket Info */}
                     <div className="w-full mt-4 text-xs">
                         <p className="font-bold">Deutschlandweit im ÖPNV bei allen am D-Ticket teilnehmenden Unternehmen und Verbünde gültig, sowie in allen Nahverkehrszügen (IRE, RE, RB, S).</p>
                         <p className="mt-2">Abonnement ausgestellt durch das Abo-Center der SNS GmbH</p>

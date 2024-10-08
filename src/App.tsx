@@ -1,9 +1,10 @@
 import './App.css';
 import TicketScreen from './components/TicketScreen';
 import TicketDetailsScreen from './components/TicketDetailsScreen';
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes, useSearchParams } from "react-router-dom";
 
 function App() {
+
   return (
     <HashRouter>
       <Routes>

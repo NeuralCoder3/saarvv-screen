@@ -32,8 +32,6 @@ export const Clock = (
                     key={i}
                     className="absolute bg-white"
                     style={{
-                        // transform: `rotate(${rotation}deg) translate(0, -200%)`,
-                        // transformOrigin: 'center bottom',
                         width: '2%',
                         height: '10.5%',
                         transform: `rotate(${rotation}deg) translate(0, -400%)`,
@@ -46,7 +44,6 @@ export const Clock = (
     };
 
     return (
-        //  w-24 h-24
         <div className="relative rounded-full bg-black flex justify-center items-center"
             style={{
                 width: width,
@@ -60,13 +57,10 @@ export const Clock = (
             <div
                 className="absolute bg-white"
                 style={{
-                    // width: '3px', // Width for hour hand
-                    width: '3%', // Width for hour hand
-                    height: '25%', // Hour hand should be shortest
-                    // transform: `rotate(${hoursDegrees}deg)`,
-                    // transformOrigin: 'bottom center', // Attach at the center bottom
+                    width: '3%',
+                    height: '25%',
                     transform: `rotate(${hoursDegrees}deg) translate(-0%, -50%)`,
-                    transformOrigin: 'center center', // Attach at the center bottom
+                    transformOrigin: 'center center', 
                 }}
             ></div>
 
@@ -74,12 +68,10 @@ export const Clock = (
             <div
                 className="absolute bg-white"
                 style={{
-                    width: '2%', // Width for minute hand
-                    height: '35%', // Minute hand slightly longer
-                    // transform: `rotate(${minutesDegrees}deg)`,
-                    // transformOrigin: 'bottom center', // Attach at the center bottom
+                    width: '2%', 
+                    height: '35%',
                     transform: `rotate(${minutesDegrees}deg) translate(-0%, -50%)`,
-                    transformOrigin: 'center center', // Attach at the center bottom
+                    transformOrigin: 'center center', 
                 }}
             ></div>
 
@@ -87,17 +79,14 @@ export const Clock = (
             <div
                 className="absolute bg-white"
                 style={{
-                    width: '1%', // Width for second hand
-                    height: '47%', // Second hand longest
-                    // transform: `rotate(${secondsDegrees}deg)`,
-                    // transformOrigin: 'bottom center', // Attach at the center bottom
+                    width: '1%', 
+                    height: '47%', 
                     transform: `rotate(${secondsDegrees}deg) translate(-0%, -50%)`,
-                    transformOrigin: 'center center', // Attach at the center bottom
+                    transformOrigin: 'center center', 
                 }}
             ></div>
 
             {/* Center Dot */}
-            {/* <div className="absolute w-2 h-2 rounded-full bg-white"></div> */}
             <div className="absolute rounded-full bg-white"
                 style={{
                     width: '7%',

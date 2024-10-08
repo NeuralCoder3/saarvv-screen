@@ -1,9 +1,9 @@
 @keyframes moveLogo {
     0% {
-        left: 0; /* Start on the left side */
+        left: 0; 
     }
     50% {
-        left: 100%; /* Move to the right side */
+        left: 100%; 
         transform: translateX(-100%); /* Ensure the image moves fully to the right */
     }
     100% {
